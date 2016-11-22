@@ -2,7 +2,8 @@ module Language.Iota.Parser.Declaration where
 
 import Language.Iota.Parser.Lexer
 import Language.Iota.Ast.Declaration
-
+import Language.Iota.Ast.SourcePos
+import Language.Iota.Comments
 
 import qualified Language.Iota.Parser.Common as C
 import qualified Text.Parsec as P
@@ -19,7 +20,7 @@ withSourceSpan f p = do
   let end' = case input of
         pt:_ -> ptPrevEndPos pt
         _ -> Nothing
-  let sp = SourceSpan (P.sourceName start) (C.toSourcePosition start) (C.toSourcePos $ fromMaybe end end')
+  let sp = SourceSpan (P.sourceName start) (C.toSourcePos start) (C.toSourcePos $ fromMaybe end end')
   return $ f sp comments x
 
 parseValueDeclaration :: TokenParser Declaration
