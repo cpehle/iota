@@ -42,7 +42,8 @@ packages:
 
 extra-deps:
 - containers-0.5.7.1
-
+- parsec-3.1.11
+- text-1.2.2.1
 # Override default flag values for local packages and extra-deps
 flags: {}
 

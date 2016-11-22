@@ -1,23 +1,26 @@
 name:                iota
 version:             0.1.0.0
-synopsis:            Initial project template from stack
+synopsis:            A programming language
 description:         Please see README.md
-homepage:            https://github.com/githubuser/iota#readme
+homepage:            https://github.com/cpehle/iota#readme
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
+author:              Christian Pehle
 maintainer:          example@example.com
-copyright:           2016 Author name here
-category:            Web
+copyright:           2016 Christian Pehle
+category:            Language
 build-type:          Simple
 -- extra-source-files:
 cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
+  exposed-modules:     Language.Iota.Comments
+                       Language.Iota.Parser
   build-depends:       base >= 4.7 && < 5,
-                       containers
+                       containers,
+                       parsec,
+                       text
   default-language:    Haskell2010
 
 executable iota-exe
@@ -39,4 +42,4 @@ test-suite iota-test
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/iota
+  location: https://github.com/cpehle/iota
